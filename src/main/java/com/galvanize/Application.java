@@ -10,10 +10,13 @@ public class Application {
         Gson builder = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
+
         JsonObject object = new JsonObject();
+
         System.getProperties().stringPropertyNames().iterator().forEachRemaining(propertyName ->
                 object.addProperty(propertyName, System.getProperty(propertyName))
         );
+
         System.out.println(builder.toJson(object));
     }
 
